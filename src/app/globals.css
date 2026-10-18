@@ -3,10 +3,6 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/*
- * Kronk theme — shadcn/ui new-york, base color zinc tinted violet (≈290°).
- * Source: "shadcn/ui theme tokens" artboard of the Kronk Portfolio design.
- */
 :root {
   --radius: 0.75rem;
 
@@ -99,7 +95,8 @@
 }
 
 @theme inline {
-  --font-sans: var(--font-plus-jakarta-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-sans:
+    var(--font-plus-jakarta-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
 
   --radius-sm: calc(var(--radius) - 4px);
@@ -153,6 +150,11 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-background font-sans text-foreground;
+  }
+  /* Tailwind v4 dropped the default pointer cursor on buttons. */
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
   }
 }

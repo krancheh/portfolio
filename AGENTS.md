@@ -32,6 +32,7 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
   ```
 
 - ESLint enforces this (`react/function-component-definition`). Run `pnpm lint` after changes; `pnpm lint --fix` converts named exports such as shadcn/ui components, but default-exported pages and layouts need converting by hand.
+- Formatting is Prettier (`.prettierrc.json`, with `prettier-plugin-tailwindcss` sorting classes, including inside `cn()` and `cva()`). Run `pnpm format` after changes; `pnpm format:check` checks without writing.
 
 ## shadcn/ui
 
